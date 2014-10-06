@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  :markdown
+    # Welcome
+
+    This is my own augmented version of [Learn X In Y Minutes][learn]. I created
+    this as a place to store notes and anything I wanted to record about a specific
+    language that didn't seem applicable enough to warrant a pull request on the
+    original project.
+
+    [learn]: http://learnxinyminutes.com/
+
+  h2 Language References
+
+  ul
+    each lang in languages
+      li: a(href='/#{lang}')= lang
