@@ -1,24 +1,25 @@
 extends layout
 
 block content
-  :markdown
-    # Welcome
+  #index
+    :markdown
+      # Welcome
 
-    This is my own augmented version of [Learn X In Y Minutes][learn]. I created
-    this as a place to store notes and anything I wanted to record about a specific
-    language that didn't seem applicable enough to warrant a pull request on the
-    original project.
+      This is my own augmented version of [Learn X In Y Minutes][learn]. I created
+      this as a place to store notes and anything I wanted to record about a specific
+      language that didn't seem applicable enough to warrant a pull request on the
+      original project.
 
-    [learn]: http://learnxinyminutes.com/
+      [learn]: http://learnxinyminutes.com/
 
-  .featured
-    h2 Featured Languages
-    ul
-      each lang in featured
-        li: a(href='/#{lang}')= lang
+    .featured
+      h2 Featured Languages
+      ul
+        each lang in featured
+          li: a(href='/#{lang}')= lang
 
-  .all
-    h2 All Languages
-    ul
-      each lang in rest
-        li: a(href='/#{lang}')= lang
+    .all
+      h2 All Languages
+      ul
+        each lang in rest
+          li: a(href='/#{lang}')= lang

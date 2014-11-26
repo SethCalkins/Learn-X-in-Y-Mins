@@ -11,11 +11,13 @@ html
     footer#footer
       .container
         .left
-          p.small Created By 
-            a(href='http://iansinnott.com') Ian Sinnott
-          ul.social
-            li: a(href='https://github.com/iansinnott'): i.fa.fa-github
-            li: a(href='https://twitter.com/ian_989'): i.fa.fa-twitter
-        .right
+          ul.table
+            li.cell
+              p.small Created By 
+                a(href='http://iansinnott.com') Ian Sinnott
+            li.cell
+              a(href='https://github.com/iansinnott'): i.fa.fa-github
+              a(href='https://twitter.com/ian_989'): i.fa.fa-twitter
+        .right#copy
           - var year = moment().format('YYYY');
           p.copy &copy #{year} Ian Sinnott
