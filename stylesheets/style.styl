@@ -34,7 +34,14 @@ silver = #DDDDDD
 
 // Custom colors
 gray = #eee
-black = #222
+black = #444
+
+js-yellow = yellow
+ruby-red = red
+php-purple = purple
+python-blue = blue // Python's logo has two colors. Oh well
+bash-green = lime
+markdown-gray = lighten(black, 20%)
 
 // }}} END Variables
 
@@ -48,7 +55,7 @@ h1
 
 a
   color blue
-  transition color .2s ease-out
+  transition all .2s ease-out
   &:hover
     color orange
 
@@ -105,6 +112,57 @@ p
   li
     line-height 1.5
 
+.featured
+  margin-bottom 100px
+  ul
+    padding 0
+    width 100%
+  li
+    width 100%
+    list-style none
+  a
+    display block
+    width 100%
+    font-size 40px
+    color black
+    text-decoration none
+    &:hover
+      padding-left 15px
+
+    &.javascript
+    &.ruby
+    &.php
+    &.python
+    &.markdown
+      &:hover
+        color white
+
+    &.javascript
+      &:hover
+        background js-yellow
+    &.ruby
+      &:hover
+        background ruby-red
+    &.php
+      &:hover
+        background php-purple
+    &.python
+      &:hover
+        background python-blue
+    &.bash
+      &:hover
+        color bash-green
+        background black
+    &.markdown
+      &:hover
+        background markdown-gray
+
+  i
+    padding-right 20px
+  .markdown
+    i
+      font-size 42px
+
 // }}} END Index
 
 // Documentation Page {{{
@@ -152,6 +210,9 @@ p
     &:first-child
       i
         margin-right 20px
+        margin-left 20px
+        +mobile()
+          margin-left 0
     i
       font-size 50px
 

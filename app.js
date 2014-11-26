@@ -11,7 +11,19 @@ var routes = require('./routes/index');
 
 var app = express();
 
+// Make moment accessible from templates
 app.locals.moment = require('moment');
+
+// The langMap is responsible for mapping language names to their icon classes.
+// This is only used for featured languages.
+app.locals.langMap = {
+  javascript: 'icon-javascript',
+  ruby: 'icon-ruby',
+  php: 'icon-php',
+  python: 'icon-python',
+  bash: 'icon-shell',
+  markdown: 'octicon octicon-markdown'
+};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

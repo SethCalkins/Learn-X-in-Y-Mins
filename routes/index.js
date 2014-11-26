@@ -26,8 +26,7 @@ var languages = (function() {
     'php',
     'python',
     'bash',
-    'markdown',
-    'json'
+    'markdown'
   ];
 
   // Match markdown files that use the .html.markdown extension.

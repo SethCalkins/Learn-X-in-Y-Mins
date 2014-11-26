@@ -13,10 +13,12 @@ block content
       [learn]: http://learnxinyminutes.com/
 
     .featured
-      h2 Featured Languages
       ul
         each lang in featured
-          li: a(href='/#{lang}')= lang
+          li
+            a(href='/#{lang}', class='#{lang}')
+              i(class='#{langMap[lang]}')
+              = lang
 
     .all
       h2 All Languages

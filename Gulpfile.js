@@ -39,7 +39,9 @@ gulp.task('deps', function() {
   // CSS
   gulp.src([
     'node_modules/highlight.js/styles/github.css',
-    'node_modules/font-awesome/css/font-awesome.css'
+    'node_modules/font-awesome/css/font-awesome.css',
+    'stylesheets/font-mfizz.css',
+    'stylesheets/octicons.css'
   ]).pipe(concat('dependencies.css'))
     .pipe(minCSS())
     .pipe(gulp.dest('public/stylesheets'));
