@@ -1,8 +1,1 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);*{-moz-box-sizing:border-box;box-sizing:border-box}body,html{overflow-x:hidden}body{font-size:18px;font-family:'Droid Serif',Georgia,Times,'Times New Roman',serif;margin:0}h1,h2,h3,h4,p{text-rendering:optimizeLegibility}p{line-height:1.5}.container{max-width:800px;margin:0 auto}.container:after,.container:before{content:'';display:table}.container:after{clear:both}.left{float:left}.right{float:right}.doc pre{position:relative;background:#eee;padding:20px;border-radius:3px;font-size:18px;overflow:auto;box-shadow:inset 0 0 10px rgba(0,0,0,.2);left:0;right:0}#footer{background:#eee;border-top:1px solid #bebebe}

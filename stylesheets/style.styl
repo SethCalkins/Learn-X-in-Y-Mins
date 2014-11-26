@@ -1,0 +1,88 @@
+// Require dependencies
+@require 'jeet'
+@require 'rupture'
+
+// Bring in google fonts
+@import url('http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic')
+
+// Reset
+global-reset()
+
+// Variables {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+helvetica = 'Helvetica Neue', Helvetica, Arial, sans-serif
+droid = 'Droid Serif', Georgia, Times, 'Times New Roman', serif
+
+gray = #eeeeee
+
+// }}} END Variables
+
+// General {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+*
+  box-sizing border-box
+
+html
+body
+  overflow-x hidden
+
+body
+  font-size 18px
+  font-family droid
+  margin 0
+
+h1
+h2
+h3
+h4
+p
+  text-rendering optimizeLegibility
+
+p
+  line-height 1.5
+
+.container
+  cf()
+  max-width 800px
+  margin 0 auto
+
+.left
+  float left
+.right
+  float right
+
+
+// }}} END General
+
+// Documentation Page {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.doc
+  pre
+    position relative
+    background gray
+    padding 20px
+    border-radius 3px
+    font-size 18px
+    overflow auto
+    box-shadow inset 0 0 10px transparentify(black, 20%)
+    // width 100%
+    left 0
+    right 0
+    // &>code
+    //   max-width 800px
+    //   margin 0 auto
+
+
+// }}} END Documentation Page
+
+// Footer {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#footer
+  background gray
+  border-top 1px solid darken(gray, 20%)
+
+// }}} END Footer
