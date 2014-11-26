@@ -56,4 +56,4 @@ gulp.task('watch', function() {
   gulp.watch('public/stylesheets/style.css').on('change', server.changed);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['serve', 'watch']);
