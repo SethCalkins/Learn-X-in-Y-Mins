@@ -11,8 +11,14 @@ block content
 
     [learn]: http://learnxinyminutes.com/
 
-  h2 Language References
+  .featured
+    h2 Featured Languages
+    ul
+      each lang in featured
+        li: a(href='/#{lang}')= lang
 
-  ul
-    each lang in languages
-      li: a(href='/#{lang}')= lang
+  .all
+    h2 All Languages
+    ul
+      each lang in rest
+        li: a(href='/#{lang}')= lang
