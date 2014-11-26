@@ -5,4 +5,17 @@ html
     link(rel='stylesheet', href='/stylesheets/dependencies.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    section
+      .container
+        block content
+    footer#footer
+      .container
+        .left
+          p.small Created By 
+            a(href='http://iansinnott.com') Ian Sinnott
+          ul.social
+            li: a(href='https://github.com/iansinnott'): i.fa.fa-github
+            li: a(href='https://twitter.com/ian_989'): i.fa.fa-twitter
+        .right
+          - var year = moment().format('YYYY');
+          p.copy &copy #{year} Ian Sinnott
