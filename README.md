@@ -15,13 +15,3 @@ The main content is intentionally decoupled from the web app. This allows easy u
 [learn]: http://learnxinyminutes.com
 [repo]: https://github.com/adambard/learnxinyminutes-docs
 
-## TODO
-
-#### 2014-10-07
-
-Looks like the remote server is having trouble cloning the submodule (`/docs`) using the `git@` form of remote. This would make sense since my GitHub public key is not the normal one I have on all my droplets. I have two options:
-
-* Add the key to the server
-* Add the server key to GitHub
-
-The latter may be the better option because it will save me time down the road and ensure all my servers have read/write access to GitHub.
