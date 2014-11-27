@@ -41,7 +41,7 @@ gulp.task('serve', function() {
 gulp.task('deploy', ['deps', 'styl'], function() {
   shell.exec('MINIFY=true gulp browserify')
   shell.exec('git add .')
-  shell.exec('git commit --amend')
+  shell.exec('git commit --amend --no-edit')
   shell.exec('git push');
   shell.exec('git push dokku master');
 });
