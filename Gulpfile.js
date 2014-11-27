@@ -1,22 +1,20 @@
-// Gulp
-var gulp    = require('gulp'),
-    plumber = require('gulp-plumber'),
-    jade    = require('gulp-jade'),
-    prefix  = require('gulp-autoprefixer'),
-    lr      = require('gulp-livereload'),
-    minCSS  = require('gulp-minify-css'),
-    concat  = require('gulp-concat');
+var gulp       = require('gulp'),
+    plumber    = require('gulp-plumber'),
+    jade       = require('gulp-jade'),
+    prefix     = require('gulp-autoprefixer'),
+    lr         = require('gulp-livereload'),
+    minCSS     = require('gulp-minify-css'),
+    concat     = require('gulp-concat'),
+    browserify = require('browserify'),
+    source     = require('vinyl-source-stream'),
+    stylus     = require('gulp-stylus'),
+    jeet       = require('jeet'),
+    rupture    = require('rupture'),
+    nib        = require('nib');
 
 var app   = require('./app');
 var debug = require('debug')('reference');
 app.set('port', process.env.PORT || 3000);
-
-// Other Deps
-var stylus  = require('gulp-stylus'),
-    jeet    = require('jeet'),
-    rupture = require('rupture'),
-    nib     = require('nib');
-
 
 // Styles can be compiled via gulp
 gulp.task('styl', function() {
@@ -33,6 +31,13 @@ gulp.task('serve', function() {
     debug('Express server listening on port ' + server.address().port);
   });
 });
+
+gulp.task('browserify', function() {
+  browserify(process.cwd() + '/client/index.js')
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('public/javascripts/'))
+})
 
 gulp.task('deps', function() {
 
@@ -66,11 +71,14 @@ gulp.task('watch', function() {
 
   gulp.watch('views/**/*.jade', server.changed);
   gulp.watch('stylesheets/**/*.styl', ['styl']);
+  gulp.watch('client/**/*.js', ['browserify']);
 
   // livereload needs to see that it was in fact a CSS file that
   // changed in order to do injection, so I need to watch the css file not the
   // stylus file.
   gulp.watch('public/stylesheets/style.css', server.changed);
+
+  gulp.watch('public/javascripts/app.js', server.changed);
 });
 
 gulp.task('default', ['deps', 'serve', 'watch']);

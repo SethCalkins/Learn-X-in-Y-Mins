@@ -13,6 +13,7 @@
     "font-awesome": "^4.2.0",
     "highlight.js": "^8.2.0",
     "jade": "~1.6.0",
+    "jquery": "^2.1.1",
     "lodash": "^2.4.1",
     "marked": "^0.3.2",
     "moment": "^2.8.4",
@@ -29,8 +30,10 @@
     "gulp-minify-css": "^0.3.11",
     "gulp-plumber": "^0.6.6",
     "gulp-stylus": "^1.3.3",
+    "browserify": "^6.3.3",
     "jeet": "^6.1.2",
     "nib": "^1.0.4",
-    "rupture": "^0.4.0"
+    "rupture": "^0.4.0",
+    "vinyl-source-stream": "^1.0.0"
   }
 }
