@@ -12,6 +12,8 @@ var gulp       = require('gulp'),
     rupture    = require('rupture'),
     shell      = require('shelljs'),
     uglify     = require('gulp-uglify'),
+    gulpif     = require('gulp-if'),
+    streamify  = require('gulp-streamify'),
     nib        = require('nib');
 
 var app   = require('./app');
@@ -34,27 +36,23 @@ gulp.task('serve', function() {
   });
 });
 
-gulp.task('build', function() {
-  return gulp.src('public/javascripts/app.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('public/javascripts/'));
-});
-
-// This makes sure we push minified files to the server
-gulp.task('deploy', ['deps', 'styl', 'browserify', 'build'], function() {
+// This makes sure we push minified files to the server. Not very pretty since
+// it re-commits every time we need to minify files but for now it works.
+gulp.task('deploy', ['deps', 'styl'], function() {
+  shell.exec('MINIFY=true gulp browserify')
   shell.exec('git add .')
-  shell.exec('git commit -m "Minimize and build production files"')
-  // shell.exec('git push');
-  // shell.exec('git push dokku master');
+  shell.exec('git commit --amend')
+  shell.exec('git push');
+  shell.exec('git push dokku master');
 });
 
-gulp.task('browserify', function(cb) {
+gulp.task('browserify', function() {
+  var minify = (typeof process.env.MINIFY === 'undefined') ? false : true;
   browserify(process.cwd() + '/client/index.js')
     .bundle()
     .pipe(source('app.js'))
+    .pipe(gulpif(minify, streamify(uglify())))
     .pipe(gulp.dest('public/javascripts/'))
-
-  cb();
 })
 
 gulp.task('deps', function() {
