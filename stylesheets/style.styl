@@ -71,6 +71,7 @@ body
   font-family droid
   color black
   margin 0
+  background #fafafa
   +below(600px)
     font-size 16px
 
@@ -90,6 +91,7 @@ p
   min-width 320px
   margin 0 auto
   padding 20px
+  padding-bottom 0
   +below(600px)
     padding 10px
 
@@ -114,15 +116,23 @@ p
 
 .featured
   margin-bottom 100px
+
   ul
     padding 0
     width 100%
+
   li
     width 100%
     list-style none
+
   span
     display inline-block
     width 60px
+
+  .markdown
+    i
+      font-size 42px
+
   a
     display block
     width 100%
@@ -133,6 +143,8 @@ p
       padding-left 15px
 
     &.javascript
+      i
+        font-size 40px
     &.ruby
     &.php
     &.python
@@ -162,11 +174,33 @@ p
       &:hover
         background markdown-gray
 
+
+.all
+  margin-bottom 50px
+  ul
+    padding 0
+  li
+    list-style none
+  a
+    display block
+    line-height 1.5
+    font-size 32px
+    text-decoration none
+    &:hover
+      background gray
+      padding-left 15px
+
+.toggle
   i
-    padding-right 20px
-  .markdown
-    i
-      font-size 42px
+    margin-left 20px
+    font-size 40px
+    line-height 20px // We don't want line height on this icon
+    position relative
+  .fa-caret-down
+    top 5px
+  .fa-caret-up
+    top 2px
+
 
 // }}} END Index
 
@@ -174,6 +208,7 @@ p
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .doc
+  margin-bottom 0px
   pre
     background gray
     border-radius 3px
@@ -208,6 +243,24 @@ p
   background gray
   border-top 1px solid darken(gray, 20%)
 
+  .upper-row
+    position relative
+    &:after
+      content ''
+      width 100%
+      height 1px
+      background darken(gray, 20%)
+      position absolute
+      bottom -50px
+  .lower-row
+    margin-top 50px
+
+  .social
+    a
+      color lighten(black, 30%)
+      &:hover
+        color black
+
   ul
     padding 0
 
@@ -228,5 +281,6 @@ p
     +mobile()
       text-align center
       line-height 1.5
+
 
 // }}} END Footer

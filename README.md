@@ -27,3 +27,16 @@ $ gulp
 The `gulp deps` task will copy over most dependencies. The mfizz font is no acception but since it wasn't on NPM I needed to put it's source elsewhere. It's source CSS resides in `/stylesheets/font-mfizz.css`. The CSS was modified slightly to provide a different font path from the default. The font files were just copied directly into `/public/fonts`. As such they are checked into the project, so cloning should not be a problem.
 
 Octicons are also included manually as they are not present on NPM. They exist on bower, but using two package managers just seems silly. The fonts were added manually to the `/public/fonts` directory. CSS resides in `/stylesheets/octicons.css` and is concatenated and minified along with other CSS dependencies.
+
+## License
+
+The majority of the content on this site is taken directly from the [Learn X in Y Minutes][learnrepo] project. From the GitHub project page: 
+
+> Contributors retain copyright to their work, and can request removal at any time.
+> By uploading a doc here, you agree to publish your work under the default
+> [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
+> licensing included on each doc page.
+
+Anything else not covered by that is free for you to use as you like.
+
+[learnrepo]: https://github.com/adambard/learnxinyminutes-docs

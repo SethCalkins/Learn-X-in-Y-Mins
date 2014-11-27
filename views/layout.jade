@@ -9,13 +9,22 @@ html
       .container
         block content
     footer#footer
-      .container
+      .container.upper-row
+        :markdown
+          Language references and documentation is taken in large part from the
+          [Learn X in Y Minutes project][learn]. Said content is licensed under
+          the [Creative Commons Attribution-ShareAlike 3.0
+          Unported](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
+          licene. All content specific only to this project is free to use.
+
+          [learn]: https://github.com/adambard/learnxinyminutes-docs
+      .container.lower-row
         .left
           ul.table
             li.cell
               p.small Created By 
                 a(href='http://iansinnott.com') Ian Sinnott
-            li.cell
+            li.cell.social
               a(href='https://github.com/iansinnott'): i.fa.fa-github
               a(href='https://twitter.com/ian_989'): i.fa.fa-twitter
         .right#copy
