@@ -3,6 +3,10 @@ var $ = require('jquery'),
 
 App = {
 
+  /**
+   * Add the 'click' event listener on the .toggle div.
+   * @return
+   */
   _initializeToggle: function() {
     var $toggle = $('.toggle');
     if (!$toggle.length) return;
