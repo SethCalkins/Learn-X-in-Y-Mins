@@ -35,7 +35,7 @@ gulp.task('serve', function() {
 });
 
 gulp.task('build', function() {
-  gulp.src('public/javascripts/app.js')
+  return gulp.src('public/javascripts/app.js')
     .pipe(uglify())
     .pipe(gulp.dest('public/javascripts/'));
 });
@@ -49,7 +49,7 @@ gulp.task('deploy', ['deps', 'styl', 'browserify', 'build'], function() {
 });
 
 gulp.task('browserify', function() {
-  browserify(process.cwd() + '/client/index.js')
+  return browserify(process.cwd() + '/client/index.js')
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('public/javascripts/'))
