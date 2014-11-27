@@ -21,7 +21,10 @@ block content
               = lang
 
     .all
-      h2 All Languages
-      ul
-        each lang in rest
-          li: a(href='/#{lang}')= lang
+      .toggle
+        h2 All Languages
+          i.fa.fa-caret-up
+      .slide-down
+        ul
+          each lang in rest
+            li: a(href='/#{lang}')= lang
