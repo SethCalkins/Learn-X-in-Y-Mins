@@ -48,11 +48,13 @@ gulp.task('deploy', ['deps', 'styl', 'browserify', 'build'], function() {
   // shell.exec('git push dokku master');
 });
 
-gulp.task('browserify', function() {
-  return browserify(process.cwd() + '/client/index.js')
+gulp.task('browserify', function(cb) {
+  browserify(process.cwd() + '/client/index.js')
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('public/javascripts/'))
+
+  cb();
 })
 
 gulp.task('deps', function() {
