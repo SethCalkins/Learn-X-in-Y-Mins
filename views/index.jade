@@ -17,7 +17,7 @@ block content
         each lang in featured
           li
             a(href='/#{lang}', class='#{lang}')
-              i(class='#{langMap[lang]}')
+              span.icon: i(class='#{langMap[lang]}')
               = lang
 
     .all
