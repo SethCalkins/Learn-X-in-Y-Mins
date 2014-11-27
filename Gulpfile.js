@@ -10,6 +10,8 @@ var gulp       = require('gulp'),
     stylus     = require('gulp-stylus'),
     jeet       = require('jeet'),
     rupture    = require('rupture'),
+    shell      = require('shelljs'),
+    uglify     = require('gulp-uglify'),
     nib        = require('nib');
 
 var app   = require('./app');
@@ -30,6 +32,20 @@ gulp.task('serve', function() {
   var server = app.listen(app.get('port'), function() {
     debug('Express server listening on port ' + server.address().port);
   });
+});
+
+gulp.task('build', function() {
+  gulp.src('public/javascripts/app.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('public/javascripts/'));
+});
+
+// This makes sure we push minified files to the server
+gulp.task('deploy', ['deps', 'styl', 'browserify', 'build'], function() {
+  shell.exec('git add .')
+  shell.exec('git commit -m "Minimize and build production files"')
+  // shell.exec('git push');
+  // shell.exec('git push dokku master');
 });
 
 gulp.task('browserify', function() {
